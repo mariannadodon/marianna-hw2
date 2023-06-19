@@ -8,9 +8,9 @@
 
 let peopleQuantity = 4;
 let hamburgersQuantity = 4;
-let friesQuantity = 2;
+let friesQuantity = 3;
 
-let isEnoughFood = hamburgersQuantity >= peopleQuantity && friesQuantity >= peopleQuantity;
+let isEnoughFood = hamburgersQuantity >= peopleQuantity && friesQuantity >= 1 ;
 if (isEnoughFood) {
     console.log('We ate!')
 } else {
@@ -151,20 +151,31 @@ console.log(removeСharacter('Marianna'));
 */
 
 
-let meters = 5000;
+let meters = 2518;
 let kilometers = meters / 1000;
 
-let lastDigit = Math.round((meters % 10000) / 1000);
-
+let lastDigitMetrs =  meters % 10;
+let lastDigitKilometrs = Math.round(kilometers) % 10;
 let metersInKilometrs = meters % 1000;
 
-if (metersInKilometrs > 0) {
-    console.log(kilometers, 'кілометра');
-} else if (lastDigit == 1) {
-    console.log(kilometers, "кілометр");
-} else if (lastDigit >= 2 && lastDigit <= 4) {
-    console.log(kilometers, "кілометра");
-} else if (lastDigit >= 5) {
-    console.log(kilometers, "кілометрів");
+let consoleResult = meters + " ";
+if (lastDigitMetrs == 1) {
+    consoleResult = consoleResult + "метр";
+} else if (lastDigitMetrs >= 2 && lastDigitMetrs <= 4) {
+    consoleResult = consoleResult + "метри";
+} else if (lastDigitMetrs >= 5 || lastDigitMetrs == 0) {
+    consoleResult = consoleResult + "метрів";
 }
 
+consoleResult = consoleResult + " це " + kilometers + " ";
+if (metersInKilometrs > 0) {
+    consoleResult = consoleResult + "кілометра";
+} else if (lastDigitKilometrs == 1) {
+    consoleResult = consoleResult + "кілометр";
+} else if (lastDigitKilometrs >= 2 && lastDigitKilometrs <= 4) {
+    consoleResult = consoleResult + "кілометра";
+} else if (lastDigitKilometrs >= 5 || lastDigitKilometrs == 0) {
+    consoleResult = consoleResult + "кілометрів";
+}
+
+ console.log(consoleResult);
