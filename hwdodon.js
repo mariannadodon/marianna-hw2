@@ -6,7 +6,7 @@
    *(Змінні типу інтеджер містять кількість продуктів в наявності у вигляді вхідних даних)
 */
 
-let peopleQuantity = 4;
+/*let peopleQuantity = 4;
 let hamburgersQuantity = 4;
 let friesQuantity = 3;
 
@@ -15,31 +15,60 @@ if (isEnoughFood) {
     console.log('We ate!')
 } else {
     console.log('We go to another cafe')
-}
+} */
+
+let peopleQuantity = 4;
+
+function getAte(hamburgersQuantity, friesQuantity){
+ 
+    let isEnoughFood = hamburgersQuantity >= peopleQuantity && friesQuantity >= 1 ;
+    if (isEnoughFood) {
+        console.log('We ate!')
+    } else {
+        console.log('We go to another cafe')
+    }}
+
+getAte(4,0);
 
 /* tasks2. Напишіть умовну конструкцію if, що перевіряє, чи знаходиться значення ціни товару між 1000 та 1900 включно.
     Результат виводити в консоль.
 */
 
-let productPrice = 1555;
+/*let productPrice = 1555;
 
 if (1000 <= productPrice && productPrice <= 1900) {
     console.log('The price of the product is in the specified range')
+} */
+
+
+
+function getPrice(productPrice) {
+ if (1000 <= productPrice && productPrice <= 1900) 
+    console.log('The price of the product is in the specified range')
 }
+
+getPrice(1555);
+
 
 /*tasks3.  Напишіть конструкцію if, щоб перевіряє, чи значення ціни товару не знаходиться між 1000 та 1900 включно.
     Реалізуйте два варіанти, один з оператором НЕ !, а інший без цього оператора.
     Результат виводити в консоль.
-*/
-let productPrice2 = 1;
+
+ let productPrice2 = 1;
 
 if (productPrice2 <= 1000 && 1900 >= productPrice2) {
     console.log('the price of the product is not in the specified range')
-}
+} */
+
+ function getPriceNot(productPrice2){
+if (productPrice2 <= 1000 && 1900 >= productPrice2) {
+    console.log('The price of the product is not in the specified range')
+}}
+
+getPriceNot(1);
 
 /*tasks4.  За номером пори року вивести назву цієї пори року використовуючи оператор if-else-if
     Результат виводити в консоль.
-*/
 
 let seasonNumber = 4;
 
@@ -51,15 +80,27 @@ if (seasonNumber == 1) {
     console.log('The season is summer');
 } else if (seasonNumber == 4) {
     console.log('The season is autumn');
-}
+}*/
+
+
+function season(seasonNumber){
+if (seasonNumber == 1) {
+    console.log('The season is winter');
+} else if (seasonNumber == 2) {
+    console.log('The season is spring');
+} else if (seasonNumber == 3) {
+    console.log('The season is summer');
+} else if (seasonNumber == 4) {
+    console.log('The season is autumn');
+}}
+
+season(3);
 
 /* tasks5.  Задано 3 числа (a, b, c), які не рівні між собою.
     Визначити середнє мід цими трьома числами
     (не середнє арифметичне значення, а яке з трьох заданих чисел среднє за значенням) використовуючи оператор if-else.
     Використати вкладені оператори if
     Результат виводити в консоль.
-*/
-
 
 let number1 = 1;
 let number2 = 8;
@@ -72,14 +113,23 @@ if ((number1 < number2) && (number2 < number3)) {
 } else if ((number1 < number3) && (number3 < number2)) {
     console.log(number3);
 }
+*/
+
+function getNumeric(number1, number2, number3){
+if ((number1 < number2) && (number2 < number3)) {
+    console.log(number2);
+} else if ((number2 < number1) && (number1 < number3)) {
+    console.log(number1);
+} else if ((number1 < number3) && (number3 < number2)) {
+    console.log(number3);
+}}
+getNumeric(3, 8, 9)
 
 /*6.  Задано номер дня тижня.
     За заданим номером вивести назву дня тижня використовуючи switch.
     Результат виводити в консоль.
-*/
 
 let dayN = 6;
-
 switch (dayN) {
     case 1:
         console.log('Monday');
@@ -103,11 +153,38 @@ switch (dayN) {
         console.log('Sunday');
         break;
 };
+*/
+
+function getDeyWeek (dayN){
+    switch (dayN) {
+        case 1:
+            console.log('Monday');
+            break;
+        case 2:
+            console.log('Tuesday');
+            break;
+        case 3:
+            console.log('Wednesday');
+            break;
+        case 4:
+            console.log('Thursday');
+            break;
+        case 5:
+            console.log('Friday');
+            break;
+        case 6:
+            console.log('Saturday');
+            break;
+        case 7:
+            console.log('Sunday');
+            break;
+    }
+}
+getDeyWeek(5)
 
 /*7.  За допомогою switch реалізуйте обчислення виразу, передаючи у switch, як параметр, символ математичної операції.
     Математичні операції для обчислення: "+", "-", "*", "/".
-    Результат виводити в консоль.  */
-
+    Результат виводити в консоль.  
 
 let numberA = 6;
 let numberB = 2;
@@ -126,8 +203,26 @@ switch (decision) {
     case '/':
         console.log(numberA / numberB);
         break;
+}*/
+
+function calculation(numberA, numberB, decision){
+    switch (decision) {
+        case '+':
+            console.log(numberA + numberB);
+            break;
+        case '-':
+            console.log(numberA - numberB);
+            break;
+        case '*':
+            console.log(numberA * numberB);
+            break;
+        case '/':
+            console.log(numberA / numberB);
+            break;
+    }
 }
 
+calculation(3, 4, '*')
 
 /*8.*  Використовуючи властивості рядків (тип string), та регулярний вираз (regular expression) видалити голосні букви зі слова. */
 
@@ -154,28 +249,20 @@ console.log(removeСharacter('Marianna'));
 let meters = 2518;
 let kilometers = meters / 1000;
 
-let lastDigitMetrs =  meters % 10;
-let lastDigitKilometrs = Math.round(kilometers) % 10;
-let metersInKilometrs = meters % 1000;
+let consoleResult = meters + " метр" + getSufix(meters) + " це " + kilometers + " кілометр" + getSufix(kilometers);
+console.log(consoleResult);
 
-let consoleResult = meters + " ";
-if (lastDigitMetrs == 1) {
-    consoleResult = consoleResult + "метр";
-} else if (lastDigitMetrs >= 2 && lastDigitMetrs <= 4) {
-    consoleResult = consoleResult + "метри";
-} else if (lastDigitMetrs >= 5 || lastDigitMetrs == 0) {
-    consoleResult = consoleResult + "метрів";
-}
+function getSufix(n) {
+    let lastDigit = Math.round(n) % 10;
+    let fractionalPart = n % 1;
 
-consoleResult = consoleResult + " це " + kilometers + " ";
-if (metersInKilometrs > 0) {
-    consoleResult = consoleResult + "кілометра";
-} else if (lastDigitKilometrs == 1) {
-    consoleResult = consoleResult + "кілометр";
-} else if (lastDigitKilometrs >= 2 && lastDigitKilometrs <= 4) {
-    consoleResult = consoleResult + "кілометра";
-} else if (lastDigitKilometrs >= 5 || lastDigitKilometrs == 0) {
-    consoleResult = consoleResult + "кілометрів";
-}
-
- console.log(consoleResult);
+    let sufix = '';
+    if (fractionalPart > 0) {
+      sufix = 'a';
+    }  else if (lastDigit >= 2 && lastDigit <= 4) {
+      sufix = 'a';
+    } else if (lastDigit >= 5 || lastDigit == 0) {
+      sufix = 'ів';
+    } 
+    return sufix;
+ }
